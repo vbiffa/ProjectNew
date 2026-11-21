@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     LootGenerator lootGenerator;
     [SerializeField] GameObject[] rooms;
+    [SerializeField] GameObject player;
     int roomSize = 10;
     Transform[] AllLootPos;
     
@@ -17,14 +18,15 @@ public class GameManager : MonoBehaviour
         Vector3 moveX = new Vector3(roomSize,0,0);
         Vector3 moveZ = new Vector3(0,0,roomSize);
         lootGenerator = GetComponent<LootGenerator>();
+        GameObject playerInst = Instantiate(player, currentPos + new Vector3(0, 2, 0), Quaternion.identity);
         for(int j=0; j<mapSize; j++)
         {
             for(int i=0; i<mapSize; i++)
             {
                 int randomIndex = Random.Range(0,rooms.Length);
-                GameObject loot = Instantiate(rooms[randomIndex], currentPos, Quaternion.identity);
+                GameObject room = Instantiate(rooms[randomIndex], currentPos, Quaternion.identity);
                 currentPos += moveX;
-                AllLootPos = loot.GetComponent<RoomData>().LootXYZ;
+                AllLootPos = room.GetComponent<RoomData>().LootXYZ;
                 lootGenerator.GenerateLoot(AllLootPos);
             }
             currentPos += moveZ;
