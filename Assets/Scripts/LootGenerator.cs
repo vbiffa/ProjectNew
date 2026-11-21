@@ -11,8 +11,11 @@ public class LootGenerator : MonoBehaviour
     {
         foreach(Transform lootPosition in lootPos)
         {
-            int randomIndex = Random.Range(0,lootPrefs.Length);
+            int randomIndex = Random.Range(0,lootPrefs.Length);            
             GameObject loot = Instantiate(lootPrefs[randomIndex], lootPosition.position, Quaternion.identity);
+            Vector3 eulerAngles = loot.transform.eulerAngles;
+            eulerAngles.x = -90f; 
+            loot.transform.eulerAngles = eulerAngles;
 
         }
     }
