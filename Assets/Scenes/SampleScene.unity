@@ -263,6 +263,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rooms:
   - {fileID: 3016867777757264570, guid: 153cace18a67fed49bb4bc604f9e9a32, type: 3}
+  - {fileID: 8596669050415370627, guid: 46e4a589f6c6b4e4696aa36cf39c23d6, type: 3}
+  player: {fileID: 8609834382504389665, guid: db4d2bc22254ac54995b6ca593ae7883, type: 3}
 --- !u!114 &832895981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -296,7 +298,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &963194226
 AudioListener:
   m_ObjectHideFlags: 0
